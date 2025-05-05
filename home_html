@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Home page</title>
+</head>
+<body>
+    <div class="top">
+        <header class="navbar">
+            <div class="logo">
+                <h2>FLOWER<span style="color: red;">.</span></h2>
+            </div>
+            <ul class="links">
+                <li><a href="#main">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Review</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
 
+        <div class="main">
+            <img src="background.jpg" alt="background image" class="hero-image">
+            <div class="hero-text">
+                <h1>Fresh Flowers</h1>
+                <h3>Natural & Beautiful Flowers</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo atque,<br> excepturi nihil ab iure illum labore explicabo commodi quasi enim suscipit nisi quos <br>exercitationem consequatur, veritatis sapiente ratione adipisci reiciendis, modi tempora?<br> Vel asperiores, ducimus accusantium rem aliquid exercitationem? Eius!</p>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+        </div>  
+    </div>
+
+    <div class="about">
+        <div class="head">
+            <h2><span style="color: palevioletred;">About</span> Us</h2>
+        </div>
+        <div class="about-content">
+            <div class="video">
+                <video src="Villiviini Flower Shop – Commercial Video 2019.mp4" controls loop></video>
+            </div>
+
+            <div class="about-text">
+                <h3><b>Why Choose Us?</b></h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus fugit nulla quasi quo ex voluptatem nesciunt aut, aliquam sapiente nihil maxime, voluptatibus ratione alias est earum vero corporis <br><br>odit sequi laborum, reiciendis nostrum minus cupiditate repellat facere? Obcaecati fugit sunt delectus fugiat nostrum natus molestias nisi tempore expedita nulla cumque alias .</p>
+
+                <div class="about-btn">
+                    <a href="#" class="a-btn">Lear More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="Product">
+        <div class="p-head">
+            <h2>Latest<span style="color: palevioletred;"> Products</span> </h2>
+        </div>
+    </div>
+</body>
+</html>
