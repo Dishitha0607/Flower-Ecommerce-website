@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
 body{
    font-family: sans-serif;
    scroll-behavior: smooth;
@@ -19,23 +24,23 @@ body{
     position: sticky;
     top: 0;
     z-index: 1000;
+    gap: 30px;
 }
 
 .logo h2{
     font-size: 28px;
     color: black;
+    padding-left: 10px;
 }
 
 .links{
-    font-size: 25px;
+    font-size: 30px;
     list-style: none;
-    display: flex;
-    gap: 80px;
-    justify-content: center;
-    flex: 1;
+    justify-content:space-between;
+    gap: 50px;
 }
 
-.links li a{
+.links a{
     text-decoration: none;
     color: gray;
     font-size: 16px;
@@ -43,9 +48,39 @@ body{
     transition: color 0.3s ease;
 }
 
-.links li a:hover{
+.links a:hover{
     color: rgb(196, 78, 78);
     cursor: pointer;
+}
+
+.icons{
+    list-style: none;
+    gap: 10px;
+    justify-content: center;
+
+}
+.icons a{
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(80, 80, 80);
+    transition: color 0.3s ease;
+}
+.icons a:hover{
+    color: rgb(196, 78, 78);
+    cursor: pointer;
+}
+
+header #toggler{
+    display: none;
+}
+header .fa-bars{
+    font-size: 25px;
+    color: rgb(73, 73, 73);
+    border-radius: 5px;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    border: 0.5px solid rgb(142, 141, 141);
+    display: none;
 }
 /* =================Hero Section================== */
 .main{
@@ -64,7 +99,7 @@ body{
 .hero-text{
     position: absolute;
     top: 25%;
-    left: 10%;
+    left: 5%;
 }
 
 .hero-text h1{
@@ -151,13 +186,81 @@ body{
     border-radius: 20px;
     text-decoration: none;
 }
+.a-btn:hover{
+    cursor: pointer;
+    background-color: rgb(196, 78, 78);
+    transition: 0.5s ease;
+}
 /* =======================Products===================== */
+
 .product{
     padding-bottom: 15px;
+    padding: 20px;
 }
 .p-head{
     font-size: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding-bottom: 20px;
     text-align: center;
+}
+
+.p-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+    padding: 20px;
+}
+
+.p-card{
+    background-color: white;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+}
+
+.p-card img{
+    width: 300px;
+    height: 400px;
+    border-radius: 2px;
+}
+
+.discount{
+    position: absolute;
+    background-color: rgb(196, 78, 78);
+    color: white;
+    padding: 5px 10px;
+}
+
+/* ====================for differnet media============= */
+@media (max-width: 991px){
+    html{
+        font-size: 55%;
+    }
+    header{
+        padding: 2rem;
+    }
+}
+@media(max-width:868px) {
+    header .fa-bars{
+        display: block;
+    }
+    header .links{
+        position: absolute;
+        top: 100%;left: 0;right: 0;
+        background: #eee;
+        border-top: 0.1rem  solid rgba(0,0,0,0.1);
+        clip-path: polygon(0,0, 100% 0, 100% 0,0 0);
+    }
+
+    header .links a{
+        margin: 1.5rem;
+        padding: 1.5rem;
+        background: white;
+        border: 0.1rem  solid rgba(0,0,0,0.1);
+        display: block;
+    }
+
 }
