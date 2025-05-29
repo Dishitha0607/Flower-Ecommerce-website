@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=dev4ce-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        .error{
+            color: red;
+            font-size: 14px;
+        }
+
+        .valid{
+            color: green;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- header section -->
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+
+        <a href="home.html" class="logo">FLOWER<span style="color: red;">.</span></a>
+
+        <nav class="navbar">
+            <a href="home.html  ">Home</a>
+            <a href="#about">About</a>
+            <a href="#shop">Shop</a>
+            <a href="#product">Product</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="#" class="fas fa-user"></a>
+        </div>
+    </header>
+    <!-- header section ends -->
+
+    <script>
+        function finalValidation(event){
+            let name=document.getElementById("Name").value.trim();
+            let NameRegEx=/^[A-Za-z\s]+$/
+            let Num=document.getElementById("number").value.trim()
+            let Email=document.getElementById("email").value.trim();
+            atpos=Email.indexOf("@gmail");
+            dotpos=Email.lastIndexOf(".com");
+
+            if(atpos<1 || (dotpos-atpos)<2){
+                alert("Enter valid Email Id")
+               event.preventDefault();
+               return false
+            }
+
+            if(Num.length!=10){
+               alert("Enter valid phone number")
+               event.preventDefault();
+               return false
+            }
+
+            if(!NameRegEx.test(name) || name.length<5){
+               alert("Enter valid User name")
+               event.preventDefault();
+               return false
+            }
+            
+            alert("Created account successfully!!")
+        }
+
+        function validateName(){
+            let name=document.getElementById("Name").value.trim();
+            let errorElement=document.getElementById("ErrorName");
+            let NameRegEx=/^[A-Za-z\s]+$/
+
+            if(!NameRegEx.test(name) || name.length <5){
+                errorElement.textContent="User should have atleast 6 charecters"
+                errorElement.className="error"
+            }
+            else{
+                errorElement.textContent="Looks Good!"
+                errorElement.className="valid"
+            }
+
+        }
+
+        function validateNum(){
+            let Num=document.getElementById("number").value.trim()
+            let errorElement=document.getElementById("ErrorNum")
+            if(Num.length!=10){
+                errorElement.textContent="Phone Number should 10 digits"
+                errorElement.className="error"
+            }
+            else{
+                errorElement.textContent="Valid phone number"
+                errorElement.className="valid"
+            }
+        }
+
+        function validateEmail(){
+            let Email=document.getElementById("email").value.trim();
+            let errorElement=document.getElementById("ErrorEmail");
+            atpos=Email.indexOf("@gmail");
+            dotpos=Email.lastIndexOf(".com");
+
+            if(atpos<1 || (dotpos-atpos)<2){
+                errorElement.textContent="Enter a google email id";
+                errorElement.className="error"
+            }
+            else{
+                errorElement.textContent="looks Good";
+                errorElement.className="valid";
+            }
+        }
+    </script>
+    <form name="myForm" onsubmit="finalValidation(event)">
+        <center>
+            <div class="formBox" id="FormBox">
+            <table>
+                <tr class="register" id="register">
+                    <th colspan="2">REGISTER</th>
+                </tr>
+                <tr class="content">
+                    <td>
+                        <input type="text" id="Name" name="Name" onchange="validateName()" placeholder="Enter Name">
+                        <div id="ErrorName" class="error"></div>
+                    </td>
+                </tr>
+                <tr class="content">
+                    <td>
+                        <input type="number" id="number" name="number" onchange="validateNum()" placeholder="Phone Number">
+                        <div id="ErrorNum" class="error"></div>
+                    </td>
+                </tr>
+                <tr class="content">
+                    <td>
+                        <input type="email" id="email" name="email" onchange="validateEmail()" placeholder="Email">
+                        <div id="ErrorEmail" class="error"></div>
+                    </td>
+                </tr>
+                <tr class="content">
+                    <td>
+                        <input type="password" id="password" name="password" onchange="validatePassword()" placeholder="Enter Password">
+                        <div id="ErrorPassword" class="error"></div>
+                    </td>
+                </tr>
+                <tr class="submit">
+                    <th colspan="2">
+                       <input type="submit" name="Submit" value="Create Account" class="submit">
+                    </th>
+                </tr>
+            </table>
+        </div>
+        </center>
+    </form>
+
+    <!-- footer section starts -->
+    <section class="footer" id="contact">
+        <div class="box-container">
+            <div class="box">
+                <h3>Quick links</h3>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#product">Product</a>
+            </div>
+            <div class="box">
+                <h3>Extra links</h3>
+                <a href="#my_account">My Accounts</a>
+                <a href="#my_order">My Orders</a>
+                <a href="#my_fav">My Favorites</a>
+            </div>
+            <div class="box">
+                <h3>Contact Info</h3>
+                <ul>
+                    <a href="number">+91 208098908</a>
+                    <a href="email">Flower_web@gmail.com</a>
+                    <a href="location">Coimbatore, Tamil Nadu</a>
+                </ul>
+            </div>
+        </div>
+        <div class="credit">
+            &copy; Created by <span style="color:red">Dishitha</span> All Right Reserved.
+        </div>
+    </section>
+    <!-- footer section ends -->
+</body>
+</html>
