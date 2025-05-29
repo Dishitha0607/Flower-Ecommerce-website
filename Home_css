@@ -2,67 +2,64 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
 }
 
 html{
+    font-size: 62.5%;
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
     overflow-x: hidden;
 }
-body{
-   font-family: sans-serif;
-   scroll-behavior: smooth;
+section{
+   padding: 2rem 9%;
 }
-/* =======================Top class========================= */
-.navbar{
-    padding: 20px 50px;
+html, body{
+    overflow-x: hidden;
+}
+/* =======================Header class========================= */
+header .logo{
+    font-size:3rem;
+    color: #333;
+    font-weight: bolder;
+}
+header{
+    position: fixed;
+    top: 0;left: 0;right: 0;
+    background:white;
+    padding: 2rem 9%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
+    justify-content: center;
     z-index: 1000;
-    gap: 30px;
+    box-shadow: 0 0 1rem black;
+    justify-content: space-between;
 }
 
-.logo h2{
-    font-size: 28px;
-    color: black;
-    padding-left: 10px;
-}
-
-.links{
-    font-size: 30px;
-    list-style: none;
-    justify-content:space-between;
-    gap: 50px;
-}
-
-.links a{
+header .navbar a{
     text-decoration: none;
     color: gray;
-    font-size: 16px;
+    font-size: 15px;
+    padding: 25px;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
-.links a:hover{
+header .navbar a:hover{
     color: rgb(196, 78, 78);
     cursor: pointer;
 }
 
-.icons{
-    list-style: none;
-    gap: 10px;
-    justify-content: center;
-
-}
-.icons a{
-    font-size: 20px;
+header .icons a{
+    font-size: 25px;
     text-decoration: none;
     color: rgb(80, 80, 80);
+    margin-left: 1.5rem;
     transition: color 0.3s ease;
 }
 .icons a:hover{
@@ -82,54 +79,47 @@ header .fa-bars{
     border: 0.5px solid rgb(142, 141, 141);
     display: none;
 }
-/* =================Hero Section================== */
-.main{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+/* =================Home Section================== */
+.home{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background:url(background-pica.png) no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.hero-image{
-    width: 100%;
-    height: 90vh;
-    object-fit: cover;
+.home .content{
+    max-width: 500px;
 }
 
-.hero-text{
-    position: absolute;
-    top: 25%;
-    left: 5%;
-}
-
-.hero-text h1{
-    font-size: 75px;
+.home .content h1{
+    font-size: 6rem;
     color: black;
-    text-shadow: 2px 2px 4px rgba(90, 90, 90, 0.5);
 }
-.hero-text h3{
+.home .content h3{
     font-size: 35px;
     padding-top: 10px;
     font-weight: 100;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: rgb(216, 94, 134);
 }
-.hero-text p{
-    font-size: 20px;
+.home .content p{
+    font-size: 17px;
     color: gray;
-    padding-top: 20px;
-    padding-bottom: 25px;
+    padding: 10px;
+    line-height: 1.5;
 }
 .btn{
     padding: 10px 70px;
     background-color: black;
     color: white;
-    margin-left: 30px;
+    margin-top: 10px;
     border-radius: 20px;
     text-decoration: none;
     font-size: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: 0.4s ease;
+    display: inline-block;
 }
 .btn:hover{
     background-color: rgb(196, 78, 78);
@@ -140,28 +130,30 @@ header .fa-bars{
 .about{
     padding: 5px 0;
     text-align: center;
-
 }
-.head{
-    background-color: rgb(248, 226, 238);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);   
-    font-size: 35px;
-    margin: 0 auto 20px auto;
-    padding: 10px 50px;
-    max-width: 800px;
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    color: #333;
+    padding: 10px;
+    margin: 2rem 0;
+    background: rgba(255, 51, 153, .05);
 }
-.about-text{
-    font-size: 20px;
+.about_text{
+    font-size: 15px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: 50px 40px;
+    padding: 20px 20px;
     text-align: left;
     max-width: 600px;
 }
-.about-text h3{
+.about_text h3{
     font-size: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding-bottom: 20px;
+}
+.about_text p{
+    color: gray;
+    font-size: 20px;
 }
 .about-content{
     display: flex;
@@ -172,8 +164,11 @@ header .fa-bars{
 }
 .video{
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px gray;
     border-radius: 5px;
 }
 .about-btn{
@@ -197,34 +192,47 @@ header .fa-bars{
     padding-bottom: 15px;
     padding: 20px;
 }
-.p-head{
+
+.heading{
     font-size: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding-bottom: 20px;
     text-align: center;
 }
 
-.p-grid{
+.product .box-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 100px;
-    padding: 20px;
+    gap: 3rem;
+    box-sizing: content-box;
+    text-align: center;
 }
 
-.p-card{
+.product .box-container .box{
     background-color: white;
     border-radius: 10px;
-    width: 250px;
     text-align: center;
-    padding: 10px;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);
     position: relative;
+    flex: 1  1 30rem;  
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center;
+    padding: 1rem;
+    box-sizing: border-box;  
 }
 
-.p-card img{
-    width: 300px;
-    height: 400px;
+.product .box-container .box img{
+    width: 25rem;
+    height: 30rem;
     border-radius: 2px;
+    text-align: center;
+    padding-left: 20px;
+    overflow: hidden;
+    display: block;
+    padding: 0; 
+    overflow: hidden;
 }
 
 .discount{
@@ -232,8 +240,142 @@ header .fa-bars{
     background-color: rgb(196, 78, 78);
     color: white;
     padding: 5px 10px;
+    font-size: 15px;
+    top: 10px;
+    left: 10px;
+    color: white;
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 5px;
 }
 
+.product .box-container .box .image .icons{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: 1s ease;
+}
+
+.product .box-container .box:hover .image .icons{
+    bottom: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.product .box-container .box:hover .image .icons a{
+    height: 50px;
+    font-size: 2rem;
+    width: 50%;
+    font-size: 17px;
+    align-items: center;
+    background-color: rgb(196, 78, 78);
+    color: #fff;
+    padding: 10px;
+}
+.product .box-container .box .image .icons a:hover{
+    background-color: #333;
+}
+
+.product .box-container .box .content{
+    padding: 2rem;
+    text-align: center;
+}
+
+.product .box-container .box .content h3{
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.product .box-container .content .price{
+    font-size: 20px;
+    color: rgb(196, 78, 78);
+    font-weight: bolder;
+    padding-top: 1rem;
+}
+
+.product .box-container .content .price span{
+    font-size: 1.5rem;
+    color: #999;
+    font-weight: lighter;
+    text-decoration: line-through;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    position: relative;
+    z-index: 11;
+}
+
+.quantity-selector button {
+    background-color: palevioletred;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.quantity-selector input.quantity-input {
+    width: 50px;
+    text-align: center;
+    margin: 0 5px;
+    font-size: 16px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* =====================contact us =================== */
+.footer .box-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1.5rem
+}
+
+.footer .box-container .box{
+    flex: 1 1 25rem;
+}
+
+.footer .box-container .box h3{
+    color:black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    padding: 10px 0;
+}
+
+.footer .box-container .box a{
+    display: block;
+    color: #333;
+    font-size: 17px;
+    padding: 10px 0;
+}
+
+.footer .box-container .box a:hover{
+    color: rgb(196, 78, 78);
+    cursor: pointer;
+}
+
+.footer .credit{
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 20px;
+    color: #333;
+    border-top: 0.2rem solid rgba(0,0,0,0.2);
+}
 /* ====================for differnet media============= */
 @media (max-width: 991px){
     html{
@@ -242,25 +384,43 @@ header .fa-bars{
     header{
         padding: 2rem;
     }
+    section{
+        padding: 2rem;
+    }
+    .home{
+        background-position: left;
+    }
 }
 @media(max-width:868px) {
     header .fa-bars{
         display: block;
     }
-    header .links{
+    header .navbar{
         position: absolute;
         top: 100%;left: 0;right: 0;
         background: #eee;
         border-top: 0.1rem  solid rgba(0,0,0,0.1);
-        clip-path: polygon(0,0, 100% 0, 100% 0,0 0);
+        clip-path: polygon(0 0, 100% 0, 100% 0,0 0);
     }
 
-    header .links a{
+    header #toggler:checked ~ .navbar{
+        clip-path: polygon(0 0, 100% 0, 100% 100%,0 100%);
+    }
+
+    header .navbar a{
         margin: 1.5rem;
         padding: 1.5rem;
         background: white;
         border: 0.1rem  solid rgba(0,0,0,0.1);
         display: block;
+    }
+
+    .home content h3{
+        font-size: 5rem;        
+    }
+
+    .home content span{
+        font-size: 2.5rem;
     }
 
 }
