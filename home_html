@@ -20,12 +20,12 @@
         <nav class="navbar">
             <a href="#home">Home</a>
             <a href="#about">About</a>
-            <a href="#shop">Shop</a>
+            <a href="shop.html">Shop</a>
             <a href="#product">Product</a>
             <a href="#contact">Contact</a>
         </nav>
         <div class="icons">
-            <a href="#" class="fas fa-heart"></a>
+            <a href="wishlist.html" class="fas fa-heart"></a>
             <a href="#" class="fas fa-shopping-cart"></a>
             <a href="Login.html" class="fas fa-user"></a>
         </div>
@@ -177,14 +177,14 @@
                 <h3>Extra links</h3>
                 <a href="Login.html">My Accounts</a>
                 <a href="#my_order">My Orders</a>
-                <a href="#my_fav">My Favorites</a>
+                <a href="wishlist.html">My Favorites</a>
             </div>
             <div class="box">
                 <h3>Contact Info</h3>
                 <ul>
                     <a href="number">+91 208098908</a>
                     <a href="email">Flower_web@gmail.com</a>
-                    <a href="location">Coimbatore, Tamil Nadu</a>
+                    <a href="https://www.google.com/maps?q=Coimbatore,+Tamil+Nadu" target="_blank">Coimbatore, Tamil Nadu</a>
                 </ul>
             </div>
         </div>
