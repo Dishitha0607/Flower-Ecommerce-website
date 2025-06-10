@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=dev4ce-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -19,36 +19,28 @@
     </style>
 </head>
 <body>
-    <!-- header section -->
-    <header>
-        <input type="checkbox" name="" id="toggler">
-        <label for="toggler" class="fas fa-bars"></label>
-
-        <a href="home.html" class="logo">FLOWER<span style="color: red;">.</span></a>
-
-        <nav class="navbar">
-            <a href="home.html  ">Home</a>
-            <a href="#about">About</a>
-            <a href="#shop">Shop</a>
-            <a href="#product">Product</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <div class="icons">
-            <a href="#" class="fas fa-heart"></a>
-            <a href="#" class="fas fa-shopping-cart"></a>
-            <a href="#" class="fas fa-user"></a>
-        </div>
-    </header>
-    <!-- header section ends -->
-
     <script>
         function finalValidation(event){
             let name=document.getElementById("Name").value.trim();
             let NameRegEx=/^[A-Za-z\s]+$/
             let Num=document.getElementById("number").value.trim()
             let Email=document.getElementById("email").value.trim();
-            atpos=Email.indexOf("@gmail");
-            dotpos=Email.lastIndexOf(".com");
+            let atpos=Email.indexOf("@gmail");
+            let dotpos=Email.lastIndexOf(".com");
+            let Password= document.getElementById("password").value.trim();
+            let errorElement=document.getElementById("ErrorPassword");
+            const specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/;
+
+            if(Password.length<6){
+                alert("Enter valid Password")
+               event.preventDefault();
+               return false
+            }
+            else if(!specialCharRegex.test(Password)){
+                alert("Enter valid Password")
+               event.preventDefault();
+               return false
+            }
 
             if(atpos<1 || (dotpos-atpos)<2){
                 alert("Enter valid Email Id")
@@ -103,8 +95,8 @@
         function validateEmail(){
             let Email=document.getElementById("email").value.trim();
             let errorElement=document.getElementById("ErrorEmail");
-            atpos=Email.indexOf("@gmail");
-            dotpos=Email.lastIndexOf(".com");
+            let atpos=Email.indexOf("@gmail");
+            let dotpos=Email.lastIndexOf(".com");
 
             if(atpos<1 || (dotpos-atpos)<2){
                 errorElement.textContent="Enter a google email id";
@@ -114,6 +106,26 @@
                 errorElement.textContent="looks Good";
                 errorElement.className="valid";
             }
+        }
+
+        function validatePassword(){
+            let Password= document.getElementById("password").value.trim();
+            let errorElement=document.getElementById("ErrorPassword");
+            const specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/;
+
+            if(Password.length<6){
+                errorElement.textContent="Password should be at least 6 characters";
+                errorElement.className="error"
+            }
+            else if(!specialCharRegex.test(Password)){
+                errorElement.textContent="Password must contain atleast one special charecter"
+                errorElement.className="error"
+            }
+            else{
+                errorElement.textContent="Looks good!";
+                errorElement.className="valid";
+            }
+
         }
     </script>
     <form name="myForm" onsubmit="finalValidation(event)">
